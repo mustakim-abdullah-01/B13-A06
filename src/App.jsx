@@ -1,10 +1,11 @@
 import { Suspense } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
+import Hero from "./components/NavBar/Hero/Hero";
 
 function App() {
   const navLinksPromise = async () => {
-    const linksPromise = await fetch("/public/NavBar.json");
+    const linksPromise = await fetch("/NavBar.json");
     return linksPromise.json();
   };
   const navPromise = navLinksPromise();
@@ -24,14 +25,8 @@ function App() {
         <NavBar navPromise={navPromise} />
       </Suspense>
 
-      <div className="flex flex-col justify-center items-center gap-4 h-dvh">
-        <p className="text-8xl font-black">Hello</p>
+      <Hero />
 
-        <button className="btn btn-lg btn-accent text-3xl font-extrabold">
-          Click me
-        </button>
-      </div>
-      
     </>
   );
 }

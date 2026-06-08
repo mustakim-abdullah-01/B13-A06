@@ -24,7 +24,7 @@ const NavBar = ({ navPromise }) => {
           <ul className="flex gap-8 text-[16px] text-[#101727] font-semibold">
             {links.map((link, index) => (
               <li key={index}>
-                <a href={link.url}>{link.label}</a>
+                <a href="">{link.label}</a>
               </li>
             ))}
           </ul>
@@ -44,7 +44,7 @@ const NavBar = ({ navPromise }) => {
           <div className="get-started-button max-md:hidden">
 
             <button className="w-32 bg-linear-to-r btn from-[#4f39f6] to-[#9514fa]  rounded-full text-[16px] font-semibold text-white hover:bg-linear-to-r hover:from-[#9514fa] hover:to-[#4f39f6] duration-1000">
-              <a href="/get-started">Get Started</a>
+              <a href="">Get Started</a>
             </button>
 
           </div>
@@ -67,7 +67,7 @@ const NavBar = ({ navPromise }) => {
               >
                 {links.map((link, index) => (
                   <li key={index}>
-                    <a href={link.url}>{link.label}</a>
+                    <a href="">{link.label}</a>
                   </li>
                 ))}
               </ul>
