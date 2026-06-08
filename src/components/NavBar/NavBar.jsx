@@ -1,6 +1,7 @@
 import { ShoppingCart } from "lucide-react";
 import { use, useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
+import CommonButton from "./CommonButton";
 
 const NavBar = ({ navPromise }) => {
   const links = use(navPromise);
@@ -11,7 +12,7 @@ const NavBar = ({ navPromise }) => {
     <>
 
 
-      <div className="flex justify-around shadow-sm items-center py-4 container mx-auto">
+      <div className="flex justify-between shadow-sm items-center py-4 container mx-auto">
 
 
         <div className="logo">
@@ -43,9 +44,7 @@ const NavBar = ({ navPromise }) => {
 
           <div className="get-started-button max-md:hidden">
 
-            <button className="w-32 bg-linear-to-r btn from-[#4f39f6] to-[#9514fa]  rounded-full text-[16px] font-semibold text-white hover:bg-linear-to-r hover:from-[#9514fa] hover:to-[#4f39f6] duration-1000">
-              <a href="">Get Started</a>
-            </button>
+            <CommonButton text="Get Started" />
 
           </div>
 

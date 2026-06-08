@@ -23,9 +23,9 @@ function App() {
         }
       >
         <NavBar navPromise={navPromise} />
+        <Hero />
       </Suspense>
 
-      <Hero />
 
     </>
   );
