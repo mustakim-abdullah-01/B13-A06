@@ -1,0 +1,31 @@
+[
+  {
+    "id": "nav-products",
+    "label": "Products",
+    "url": "/products"
+  },
+
+  {
+    "id": "nav-features",
+    "label": "Features",
+    "url": "/features"
+  },
+
+  {
+    "id": "nav-pricing",
+    "label": "Pricing",
+    "url": "/pricing"
+  },
+
+  {
+    "id": "nav-testimonials",
+    "label": "Testimonials",
+    "url": "/testimonials"
+  },
+
+  {
+    "id": "nav-faq",
+    "label": "FAQ",
+    "url": "/faq"
+  }
+]
