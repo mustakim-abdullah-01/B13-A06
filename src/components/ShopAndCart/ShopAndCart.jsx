@@ -2,7 +2,7 @@ import { Suspense, useState } from "react";
 import Shop from "./Shop";
 import Cart from "./Cart";
 
-const ShopAndCart = ({ cart, setCart }) => {
+const ShopAndCart = ({ cart, setCart, amount, setAmount }) => {
   const [shopActive, setShopActive] = useState(true);
 
   const productsPromise = async () => {
@@ -16,7 +16,7 @@ const ShopAndCart = ({ cart, setCart }) => {
     <>
       <div>
         <div className="container mx-auto flex justify-center mb-11">
-          <div className="p-1 border border-[#00000031] shadow-md rounded-full">
+          <div className="p-1 border border-[#0000001a] shadow-sm rounded-full">
             <button
               className={`btn ${shopActive ? "bg-linear-to-r from-[#4f39f6] to-[#9514fa] text-white" : ""}   text-[16px] rounded-full transition-colors duration-500`}
               onClick={() => setShopActive(true)}
@@ -43,12 +43,24 @@ const ShopAndCart = ({ cart, setCart }) => {
             <Shop
               cart={cart}
               setCart={setCart}
+              amount={amount}
+              setAmount={setAmount}
               productPromise={productPromise}
             />
-          </Suspense>
-        ) : (
-          <Cart cart={cart} setCart={setCart} />
-        )}
+          </Suspense>) : (<Suspense
+          fallback={
+            <div className="h-96 flex justify-center items-center">
+              <span className="loading loading-spinner text-info"></span>
+            </div>
+          }
+        >
+          <Cart
+            amount={amount}
+            setAmount={setAmount}
+            cart={cart}
+            setCart={setCart}
+          />
+        </Suspense>)}
       </div>
     </>
   );

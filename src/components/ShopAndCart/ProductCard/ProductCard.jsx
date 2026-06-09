@@ -1,27 +1,22 @@
 import { Check } from "lucide-react";
+import { toast } from "react-toastify";
 
-const ProductCard = ({ product, cart, setCart }) => {
-
-
+const ProductCard = ({ product, cart, setCart, amount, setAmount }) => {
   const { name, badge, description, price, billing_cycle, icon, features } =
     product;
 
+  const onClickHandler = () => {
+    const oldArray = cart;
 
-const onClickHandler = () =>{
-
-  const oldArray = cart
-
-  const newArray = [... oldArray, product]
-
-  setCart(newArray)
-
-}
-
+    const newArray = [...oldArray, product];
+    toast(`Added ${name} to cart`)
+    setAmount( amount + price)
+    setCart(newArray);
+  };
 
   return (
     <>
       <div className="bg-white md:w-96 mx-auto shadow-lg rounded-2xl p-6">
-
         <div className="top-badge relative h-9">
           <div
             className={`badge shadow badge-soft rounded-full px-3 py-4 absolute right-0 top-0  text-[14px] font-medium

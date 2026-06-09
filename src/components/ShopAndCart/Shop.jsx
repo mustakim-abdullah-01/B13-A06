@@ -1,7 +1,7 @@
 import { use } from "react";
 import ProductCard from "./ProductCard/ProductCard";
 
-const Shop = ({ productPromise, cart, setCart }) => {
+const Shop = ({ productPromise, cart, setCart, amount, setAmount }) => {
   const productsData = use(productPromise);
 
   return (
@@ -14,6 +14,8 @@ const Shop = ({ productPromise, cart, setCart }) => {
               setCart={setCart}
               key={product.id}
               product={product}
+              amount={amount}
+              setAmount={setAmount}
             />
           );
         })}
