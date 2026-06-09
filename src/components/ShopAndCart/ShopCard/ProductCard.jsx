@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 
 const ProductCard = ({ product, cart, setCart, amount, setAmount }) => {
   const { name, badge, description, price, billing_cycle, icon, features } =
@@ -9,17 +9,27 @@ const ProductCard = ({ product, cart, setCart, amount, setAmount }) => {
     const oldArray = cart;
 
     const newArray = [...oldArray, product];
-    toast(`Added ${name} to cart`)
+    toast.info(`Added ${name} to cart`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Slide,
+      })
     setAmount( amount + price)
     setCart(newArray);
   };
 
   return (
     <>
-      <div className="bg-white md:w-96 mx-auto shadow-lg rounded-2xl p-6">
+      <div className="bg-white md:w-96 mx-auto shadow-md rounded-2xl p-6">
         <div className="top-badge relative h-9">
           <div
-            className={`badge shadow badge-soft rounded-full px-3 py-4 absolute right-0 top-0  text-[14px] font-medium
+            className={`badge badge-soft rounded-full px-3 py-4 absolute right-0 top-0  text-[14px] font-medium
               ${
                 badge === "Best Seller"
                   ? "badge-warning"

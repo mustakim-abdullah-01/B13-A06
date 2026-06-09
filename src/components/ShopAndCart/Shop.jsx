@@ -1,5 +1,5 @@
 import { use } from "react";
-import ProductCard from "./ProductCard/ProductCard";
+import ProductCard from "./ShopCard/ProductCard";
 
 const Shop = ({ productPromise, cart, setCart, amount, setAmount }) => {
   const productsData = use(productPromise);

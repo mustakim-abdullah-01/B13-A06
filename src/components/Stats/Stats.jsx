@@ -3,7 +3,7 @@ const Stats = () => {
     <>
       <div className="
 
-      md:gap-32 mb-32 max-md:mt-16 py-8 md:py-16 md:px-52 bg-linear-to-r from-[#4f39f6] to-[#9514fa] flex max-md:flex-col justify-center items-center
+      gap-8 lg:gap-32 mb-32 max-md:mt-16 py-8 md:py-16 md:px-52 bg-linear-to-r from-[#4f39f6] to-[#9514fa] flex max-md:flex-col justify-center items-center
       
       ">
 
