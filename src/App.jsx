@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Hero from "./components/Hero/Hero";
@@ -13,6 +13,11 @@ function App() {
   };
   const navPromise = navLinksPromise();
 
+
+const [cart, setCart] = useState([])
+
+
+
   return (
     <>
       <Suspense
@@ -20,17 +25,14 @@ function App() {
           <div className="flex justify-center items-center h-120">
             <span className="loading loading-spinner text-neutral"></span>
           </div>
-        }>
-
-
-        <NavBar navPromise={navPromise} />
+        }
+      >
+        <NavBar cart={cart} navPromise={navPromise} />
+      </Suspense>
         <Hero />
         <Stats />
         <ProductIntro />
-        <ShopAndCart />
-
-
-      </Suspense>
+        <ShopAndCart cart={cart} setCart={setCart} />
     </>
   );
 }

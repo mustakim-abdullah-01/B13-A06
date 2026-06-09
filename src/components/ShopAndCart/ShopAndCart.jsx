@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Shop from "./Shop";
 import Cart from "./Cart";
 
-const ShopAndCart = () => {
+const ShopAndCart = ({ cart, setCart }) => {
   const [shopActive, setShopActive] = useState(true);
+
+  const productsPromise = async () => {
+    const productPromise = await fetch("/ProductsData.Json");
+    return productPromise.json();
+  };
+
+  const productPromise = productsPromise();
 
   return (
     <>
@@ -21,11 +28,27 @@ const ShopAndCart = () => {
               className={`btn ${!shopActive ? "bg-linear-to-r from-[#4f39f6] to-[#9514fa] text-white" : ""} text-[16px] rounded-full transition-colors duration-500`}
               onClick={() => setShopActive(false)}
             >
-              Cart (2)
+              Cart ({cart.length})
             </button>
           </div>
         </div>
-          {shopActive ? <Shop /> : <Cart />}
+        {shopActive ? (
+          <Suspense
+            fallback={
+              <div className="h-96 flex justify-center items-center">
+                <span className="loading loading-spinner text-info"></span>
+              </div>
+            }
+          >
+            <Shop
+              cart={cart}
+              setCart={setCart}
+              productPromise={productPromise}
+            />
+          </Suspense>
+        ) : (
+          <Cart cart={cart} setCart={setCart} />
+        )}
       </div>
     </>
   );

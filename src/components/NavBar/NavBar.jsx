@@ -3,10 +3,10 @@ import { use, useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
 import CommonButton from "../CommonButton";
 
-const NavBar = ({ navPromise }) => {
+const NavBar = ({ navPromise, cart }) => {
   const links = use(navPromise);
 
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
@@ -28,11 +28,11 @@ const NavBar = ({ navPromise }) => {
         </div>
 
         <div className="button-group flex items-center gap-1 md:gap-4">
-
-
           <div className="shopping-cart relative btn btn-sm btn-ghost h-12 rounded-full">
             <ShoppingCart />
-            <div className="h-5 w-5 flex text-white font-bold text-md absolute left-2 bottom-1 justify-center items-center bg-red-500 rounded-full">{0}</div>
+            <div className="h-5 w-5 flex text-white font-bold text-md absolute left-2 bottom-1 justify-center items-center bg-red-500 rounded-full">
+              {cart.length}
+            </div>
           </div>
 
           <div className="login-button text-[16px] font-semibold">
