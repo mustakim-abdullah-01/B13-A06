@@ -10,15 +10,43 @@ const NavBar = ({ navPromise, cart }) => {
 
   return (
     <>
-      <div className="flex justify-between shadow-sm items-center py-4 px-1 container mx-auto">
-        <div className="logo">
-          <h2 className="text-4xl font-extrabold h-11 text-transparent bg-linear-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text">
+      <div
+        className="
+          fixed top-0 flex justify-between items-center z-20
+          w-full
+          md:py-4 py-2 px-1 mx-auto
+          bg-base-200
+          shadow-sm
+        "
+      >
+        <div
+          className="
+            logo
+          "
+        >
+          <h2
+            className="
+              h-11
+              text-4xl text-transparent font-extrabold
+              bg-linear-to-r bg-clip-text from-[#4f39f6] to-[#9514fa]
+            "
+          >
             <a href="">DigiTools</a>
           </h2>
         </div>
 
-        <div className="links-large-navbar max-lg:hidden">
-          <ul className="flex gap-8 text-[16px] text-[#101727] font-semibold">
+        <div
+          className="
+            links-large-navbar max-lg:hidden
+          "
+        >
+          <ul
+            className="
+              flex
+              text-[16px] text-[#101727] font-semibold
+              gap-8
+            "
+          >
             {links.map((link, index) => (
               <li key={index}>
                 <a href="">{link.label}</a>
@@ -27,23 +55,57 @@ const NavBar = ({ navPromise, cart }) => {
           </ul>
         </div>
 
-        <div className="button-group flex items-center gap-1 md:gap-4">
-          <div className="shopping-cart relative btn btn-sm btn-ghost h-12 rounded-full">
+        <div
+          className="
+            flex items-center
+            button-group gap-1 md:gap-4
+          "
+        >
+          <div
+            className="
+              relative
+              h-12
+              rounded-full
+              shopping-cart btn btn-sm btn-ghost
+            "
+          >
             <ShoppingCart />
-            <div className="h-5 w-5 flex text-white font-bold text-md absolute left-2 bottom-1 justify-center items-center bg-red-500 rounded-full">
+            <div
+              className="
+                flex absolute left-2 bottom-1 justify-center items-center
+                h-5 w-5
+                text-white text-md font-bold
+                bg-red-500
+                rounded-full
+              "
+            >
               {cart.length}
             </div>
           </div>
 
-          <div className="login-button text-[16px] font-semibold">
+          <div
+            className="
+              text-[16px] font-semibold
+              login-button
+            "
+          >
             <a href="">Login</a>
           </div>
 
-          <div className="get-started-button max-md:hidden">
+          <div
+            className="
+              get-started-button max-md:hidden
+            "
+          >
             <CommonButton text="Get Started" />
           </div>
 
-          <div className="links-small-navbar lg:hidden relative">
+          <div
+            className="
+              lg:hidden relative
+              links-small-navbar
+            "
+          >
             <div
               className={`
                 text-black btn ${menuOpen ? "btn-active" : ""}
@@ -60,7 +122,13 @@ const NavBar = ({ navPromise, cart }) => {
                 `}
               >
                 {links.map((link, index) => (
-                  <li className="border-b border-b-white/10 py-2" key={index}>
+                  <li
+                    className="
+                      py-2
+                      border-b border-b-white/10
+                    "
+                    key={index}
+                  >
                     <a href="">{link.label}</a>
                   </li>
                 ))}

@@ -32,7 +32,9 @@ const ShopAndCart = ({ cart, setCart, amount, setAmount }) => {
             </button>
           </div>
         </div>
-        {shopActive ? (
+        {shopActive ? 
+
+        (
           <Suspense
             fallback={
               <div className="h-96 flex justify-center items-center">
@@ -47,7 +49,13 @@ const ShopAndCart = ({ cart, setCart, amount, setAmount }) => {
               setAmount={setAmount}
               productPromise={productPromise}
             />
-          </Suspense>) : (<Suspense
+          </Suspense>
+        ) 
+          
+          : 
+          
+        (
+          <Suspense
           fallback={
             <div className="h-96 flex justify-center items-center">
               <span className="loading loading-spinner text-info"></span>
@@ -60,7 +68,10 @@ const ShopAndCart = ({ cart, setCart, amount, setAmount }) => {
             cart={cart}
             setCart={setCart}
           />
-        </Suspense>)}
+          </Suspense>
+        )
+      
+      }
       </div>
     </>
   );

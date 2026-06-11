@@ -6,6 +6,8 @@ import Stats from "./components/Stats/Stats";
 import ProductIntro from "./components/ProductIntro/ProductIntro";
 import ShopAndCart from "./components/ShopAndCart/ShopAndCart";
 import { Slide, ToastContainer } from "react-toastify";
+import StepsContent from "./components/Steps/StepsContent";
+import StepsCard from "./components/Steps/StepsCard";
 
 function App() {
   const navLinksPromise = async () => {
@@ -14,10 +16,9 @@ function App() {
   };
   const navPromise = navLinksPromise();
 
+  const [cart, setCart] = useState([]);
 
-const [cart, setCart] = useState([])
-
-const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(0);
   return (
     <>
       <Suspense
@@ -32,12 +33,14 @@ const [amount, setAmount] = useState(0)
       <Hero />
       <Stats />
       <ProductIntro />
-      <ShopAndCart 
+      <ShopAndCart
         amount={amount}
         setAmount={setAmount}
         cart={cart}
         setCart={setCart}
       />
+      <StepsContent />
+      <StepsCard />
 
       <ToastContainer
         position="top-right"

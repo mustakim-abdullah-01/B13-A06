@@ -9,6 +9,9 @@ const ProductCard = ({ product, cart, setCart, amount, setAmount }) => {
     const oldArray = cart;
 
     const newArray = [...oldArray, product];
+    setAmount(amount + price);
+    setCart(newArray);
+
     toast.info(`Added ${name} to cart`, {
       position: "top-right",
       autoClose: 5000,
@@ -19,14 +22,12 @@ const ProductCard = ({ product, cart, setCart, amount, setAmount }) => {
       progress: undefined,
       theme: "light",
       transition: Slide,
-      })
-    setAmount( amount + price)
-    setCart(newArray);
+    });
   };
 
   return (
     <>
-      <div className="bg-white md:w-96 mx-auto shadow-md rounded-2xl p-6">
+      <div className="bg-white md:w-96 mx-auto shadow-md rounded-2xl p-6 hover:-translate-y-1.5 duration-700 hover:shadow-[#4f39f6]/50 ">
         <div className="top-badge relative h-9">
           <div
             className={`badge badge-soft rounded-full px-3 py-4 absolute right-0 top-0  text-[14px] font-medium
@@ -78,7 +79,7 @@ const ProductCard = ({ product, cart, setCart, amount, setAmount }) => {
 
         <button
           onClick={onClickHandler}
-          className="btn w-full text-white text-[16px] font-bold rounded-full transition-colors duration-500 bg-linear-to-r from-[#4f39f6] to-[#9514fa] hover:bg-linear-to-r hover:from-[#9514fa] hover:to-[#4f39f6]"
+          className="btn w-full text-white text-[16px] font-bold rounded-full transition-all duration-500 bg-linear-to-r from-[#4f39f6] to-[#9514fa] hover:shadow-sm hover: hover:-translate-y-0.5 hover:bg-linear-to-r hover:from-[#9514fa] hover:to-[#4f39f6]"
         >
           Buy Now
         </button>
