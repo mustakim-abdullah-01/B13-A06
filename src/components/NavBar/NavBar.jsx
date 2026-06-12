@@ -11,8 +11,7 @@ const NavBar = ({ navPromise, cart }) => {
   return (
     <>
       <div
-        className="
-          fixed top-0 flex justify-between items-center z-20
+        className="top-0 flex justify-between items-center z-20
           w-full
           md:py-4 py-2 px-1 mx-auto
           bg-base-200

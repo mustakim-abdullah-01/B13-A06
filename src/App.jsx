@@ -8,6 +8,8 @@ import ShopAndCart from "./components/ShopAndCart/ShopAndCart";
 import { Slide, ToastContainer } from "react-toastify";
 import StepsContent from "./components/Steps/StepsContent";
 import StepsCard from "./components/Steps/StepsCard";
+import PricingContent from "./components/PricingCards/PricingContent";
+import PricingCards from "./components/PricingCards/PricingCards";
 
 function App() {
   const navLinksPromise = async () => {
@@ -41,6 +43,8 @@ function App() {
       />
       <StepsContent />
       <StepsCard />
+      <PricingContent />
+      <PricingCards />
 
       <ToastContainer
         position="top-right"

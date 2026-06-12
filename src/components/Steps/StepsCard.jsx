@@ -5,7 +5,7 @@ import rocket from "../../assets/rocket.png";
 const StepsCard = () => {
   return (
     <>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-32 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-64 gap-8">
         <div className="p-6 rounded-2xl border-2 border-[#f1f1f1] transition-all shadow-md hover:-translate-y-2.5 duration-700 hover:shadow-[#4f39f6]">
           <div className="flex justify-end mb-7.5">
             <div className="flex justify-center items-center h-10 w-10 rounded-full bg-linear-to-r from-[#4f39f6] to-[#9514fa]">

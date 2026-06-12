@@ -79,7 +79,7 @@ const ProductCard = ({ product, cart, setCart, amount, setAmount }) => {
 
         <button
           onClick={onClickHandler}
-          className="btn w-full text-white text-[16px] font-bold rounded-full transition-all duration-500 bg-linear-to-r from-[#4f39f6] to-[#9514fa] hover:shadow-sm hover: hover:-translate-y-0.5 hover:bg-linear-to-r hover:from-[#9514fa] hover:to-[#4f39f6]"
+          className="btn w-full text-white text-[16px] font-bold rounded-full transition-all duration-500 bg-linear-to-r from-[#4f39f6] to-[#9514fa] shadow-md hover:shadow-[#9514fa] border-none hover:  hover:bg-linear-to-r hover:from-[#9514fa] hover:to-[#4f39f6] md:mb-1"
         >
           Buy Now
         </button>
