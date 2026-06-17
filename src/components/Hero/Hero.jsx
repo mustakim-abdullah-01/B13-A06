@@ -5,7 +5,7 @@ import CommonButton from "../CommonButton";
 const Hero = () => {
   return (
     <>
-      <div className="hero-div container mx-auto mt-28 max-md:mt-4.5 md:mb-24 max-md:py-16 flex max-md:gap-8 max-md:flex-col-reverse justify-between items-center">
+      <div className="hero-div container mx-auto md:mb-24 max-md:py-16 flex max-md:gap-8 max-md:flex-col-reverse justify-between items-center">
         <div className="left-div px-1.5 flex justify-center max-md:items-center flex-col gap-9">
           <div className="content-div flex flex-col gap-4">
             <div className="badge-div shadow-lg bg-[#e1e7ff] px-4 py-2 w-73.5 rounded-full flex justify-center items-center gap-1">
