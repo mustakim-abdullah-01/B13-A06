@@ -11,6 +11,7 @@ import StepsCard from "./components/Steps/StepsCard";
 import PricingContent from "./components/PricingCards/PricingContent";
 import PricingCards from "./components/PricingCards/PricingCards";
 import GradientSection from "./components/GradientSection/GradientSection";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const navLinksPromise = async () => {
@@ -47,6 +48,7 @@ function App() {
       <PricingContent />
       <PricingCards />
       <GradientSection />
+      <Footer />
 
       <ToastContainer
         position="top-right"

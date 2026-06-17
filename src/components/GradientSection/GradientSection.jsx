@@ -1,7 +1,7 @@
 const GradientSection = () => {
   return (
     <>
-      <div className="max-md:px-4 text-center mt-8 py-30 flex flex-col justify-center items-center bg-linear-to-r from-[#4f39f6] to-[#9514fa]">
+      <div className="max-md:px-4 text-center mt-8 py-30 flex flex-col max-w-400 mx-auto justify-center items-center bg-linear-to-r from-[#4f39f6] to-[#9514fa]">
         <h1 className=" text-white mb-4 text-[40px] font-extrabold">
           Ready to Transform Your Workflow?
         </h1>
