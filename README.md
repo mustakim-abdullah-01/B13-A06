@@ -8,7 +8,7 @@ A clean, fast, and fully responsive web app built to make product browsing and c
 
 I built **DigiTools** to create a smooth, modern shopping experience that feels snappy and looks great on any screen. It handles product management and cart interactions effortlessly behind the scenes, giving users a fluid interface whether they are on a phone or a desktop.
 
-👉 **[Check out the Live Demo on Netlify](https://https://digitools-by-mustakim.netlify.app)**
+👉 **[Check out the Live Demo on Netlify](https://digitools-by-mustakim.netlify.app)**
 
 ---
 
